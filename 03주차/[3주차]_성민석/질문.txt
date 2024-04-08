@@ -1,0 +1,23 @@
+1. 전역 스코프 
+var x="global x";
+var y="global y";
+값이 수집되고
+
+2.ouetr함수 스코프
+ var z= "outer's local z"; 값이 수집되고
+
+console.log(x) //아우터함수 스코프에 x값이 없어서 전역스코프에서 값을 가져온다
+console.log(y) //위와 동일
+console.log(z) //아우터함수 스코프에 z값이 있어서 값을 가져온다
+
+3. inner함수 스코프
+  var x = "inner's local x"; 값이 수집되고
+
+   console.log(x); // inner함수 스코프에서 값을 가져옴
+   console.log(y); // inner함수와 outer함수 스코프에 값이 없기에 전역에서 가저온다
+   console.log(z); // outer에서 가져온다
+
+
+4. inner,outer스코프가 사라지고 다시 전역스코프에서
+console.log(x); // 전역스코프의 값을 출력
+console.log(z); // z는 전역에 선언된게 없어서 에러
