@@ -33,6 +33,7 @@ foo();
 
 - 암묵적 전역: 선언하지 않은 변수를 참조하면 ReferenceError 발생.
 - 변수, 함수, 매개변수의 삭제: delete 연산자로 변수나 함수, 매개변수를 삭제하면 SyntaxError 발생.
+- 중복된 매개변수 이름
 - with 문 사용 : SyntaxError 발생.
 
 ※ with 문
