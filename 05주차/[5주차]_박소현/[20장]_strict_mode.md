@@ -21,8 +21,8 @@
 - **함수 단위로 strict mode를 적용하는 것도 권장되지 않는다.** 함수마다 일일이 strict mode를 적용하거나 일관성 없이 적용하는 것은 바람직하지 않다.
 ```
 function foo() {
-'use strict';
-x = 10;
+  'use strict';
+  x = 10;
 }
 foo();
 ```
