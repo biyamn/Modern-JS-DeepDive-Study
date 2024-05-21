@@ -88,4 +88,4 @@ console.log(obj[symbolKey1]); // 1
 
 ## :six: Well-known Symbol
 
-- 자바스크립트가 기본 제공하는 빌트인 심벌 값.
+- 자바스크립트가 기본 제공하는 빌트인 심벌 값. **Symbol.iterable**
