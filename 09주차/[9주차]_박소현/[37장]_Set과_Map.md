@@ -115,6 +115,8 @@ Set.prototype.isSuperset = function (subset) {
 
 - 중복된 키를 갖는 요소는 덮어쓰여진다.
 
+### :memo: Map의 프로퍼티와 메서드
+
 ```javascript
 /**
 1. 객체 생성
@@ -186,5 +188,5 @@ console.log(map.entries());
   [ 'Key2', 'Value2' ],
   [ 'Key3', 'Value3' ]
 }
-```
 */
+```
