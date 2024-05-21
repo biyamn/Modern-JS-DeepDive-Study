@@ -9,7 +9,7 @@
 - 요소 순서에 의미가 없다.
 - 인덱스로 요소 접근 불가.
 - 객체나 배열과 같이 자바스크립트의 모든 값을 요소로 저장할 수 있다.
-- Set 객체는 이터러블(for...of문 순회, 스프레드 문법, 배열 디스트럭처링의 대상 가능)
+- Set 객체는 이터러블(for...of문 순회, 스프레드 문법, 배열 디스트럭처링 할당의 대상 가능)
 
 ### :memo: Set의 프로퍼티와 메서드
 
@@ -38,6 +38,7 @@ console.log(set1.add(4).add(5)); // Set(5) {1, 2, 3, 4, 5}
 
 /**
 4. 요소 존재 여부 확인 : Set.prototype.has 메서드 사용. 불리언 값 반환. */
+
 console.log(set1.has(2)); // true
 console.log(set1.has(7)); // false
 
@@ -57,21 +58,59 @@ set2.clear();
 /**
 7. 요소 순회
 - Set.prototype.forEach 메서드 사용.
-- 콜백 함수 인수는 (현재 순회 중인 요소값, 현재 순회 중인 요소값, 현재 순회 중인 Set 객체 자체)이다. 첫번째 인수와 두번째 인수가 같다.
-- for...of 문으로도 순회할 수 있다.
+- 콜백 함수 인수는 (현재 순회 중인 요소값, 첫번째 인수와 같은 값, 현재 순회 중인 Set 객체 자체)이다.
+- for...of 문으로도 순회할 수 있다. */
+
+set1.forEach((v, v2, set) => console.log(v, v2, set));
+//1 1 Set(4) {1, 2, 3, 4}
+//2 2 Set(4) {1, 2, 3, 4}
+//3 3 Set(4) {1, 2, 3, 4}
+//4 4 Set(4) {1, 2, 3, 4}
 
 ```
 
 ### :memo: Set의 집합 연산
 
+``` javascript
+/**
+1. 교집합 */
+
+Set.prototype.intersection = function (set) {
+    return new Set([...this].filter(v => set.has(v)));
+}
+
+/**
+2. 합집합 */
+
+Set.prototype.union = function (set) {
+    return new Set ([...this, ...set]);
+}
+
+/**
+3. 차집합 */
+
+Set.prototype.difference = function (set) {
+    return new Set([...this].filter(v => !set.has(v)));
+}
+
+/**
+4. 부분집합과 상위집합 */
+
+Set.prototype.isSuperset = function (subset) {
+    const supersetArr = [...this];
+    return [...subset].every(v => supersetArr.includes(v));
+}
 ```
 
+---
 
+## :two: Map
 
+**정의: 키와 값의 쌍으로 이루어진 컬렉션**
 
-
-
-```
+- 모든 값을 키로 사용 가능. (객체는 문자열과 심벌값만 가능하다)
+- 이터러블. (객체는 언이터러블하다)
+- 요소 개수 확인할 때 length 메서드가 아니라 Map.prototype.size 프로퍼티를 사용한다.
 
 
 
