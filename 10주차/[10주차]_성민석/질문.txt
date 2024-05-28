@@ -1,0 +1,28 @@
+3. nodeValue를 텍스트 노드의 값을 변경하는 예시코드와 함께 설명하시오. (성민석)
+
+
+nodeValue 속성은 DOM (Document Object Model)에서 텍스트 노드의 값을 변경하는 데 사용됩니다
+텍스트 노드는 요소의 텍스트 내용을 나타내며, nodeValue 속성을 통해 이 내용을 읽거나 변경할 수 있습니다.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>nodeValue Example</title>
+</head>
+<body>
+    <p id="hi">Hello, world!</p>
+
+    <script>
+        // 1. 텍스트 노드를 포함한 <p> 요소를 선택합니다.
+        var paragraph = document.getElementById("hi");
+
+        // 2. 텍스트 노드를 가져옵니다.
+        var textNode = paragraph.firstChild;
+
+        // 3. nodeValue를 사용하여 텍스트 노드의 값을 변경합니다.
+        textNode.nodeValue = "Hello, JavaScript!";
+
+        // 이제 <p> 요소의 텍스트 내용이 변경되었습니다.
+    </script>
+</body>
+</html>
