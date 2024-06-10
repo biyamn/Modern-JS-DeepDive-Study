@@ -70,3 +70,4 @@ xhr.onreadystatechange = () => {
   }
 }
 ```
+- readystatechange 이벤트 대신 load 이벤트를 캐치해도 좋다.
